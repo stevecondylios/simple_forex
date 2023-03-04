@@ -11,7 +11,7 @@ class EasyMoneyGenerator < ActiveRecord::Generators::Base
   class_option :'skip-migration', type: :boolean, desc: "Don't generate a migration for the currencies table"
   class_option :'skip-initializer', type: :boolean, desc: "Don't generate an initializer"
 
-  source_root File.expand_path("../../easy_money", __FILE__)
+  source_root File.expand_path("../../../easy_money", __FILE__)
 
   # Copies the migration template to db/migrate.
   def copy_files
@@ -19,8 +19,10 @@ class EasyMoneyGenerator < ActiveRecord::Generators::Base
     migration_template "migration.rb", "db/migrate/create_currencies.rb"
   end
 
-  def create_initializer
-    return if options["skip-initializer"]
-    copy_file "initializer.rb", "config/initializers/easymoney.rb"
-  end
+
+  # # Uncomment to copy /lib/easy_money/initializer.rb to config/initializers/easymoney.rb
+  # def create_initializer
+  #   return if options["skip-initializer"]
+  #   copy_file "initializer.rb", "config/initializers/easymoney.rb"
+  # end
 end
