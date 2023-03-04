@@ -81,8 +81,19 @@ module EasyMoney
 
 
 
-end
+
+ # Required for rake files
+# From here: https://gist.github.com/ntamvl/7a6658b4cd82d6fbd15434f0a9953411#integrate-our-gem-with-rails-apps
+require 'railtie' if defined?(Rails)
 
 
 
+
+end # This is the end for the module
+
+
+
+
+
+# sc: this goes at the end so the module gets loaded when require 'easy_money' is called
 include EasyMoney
