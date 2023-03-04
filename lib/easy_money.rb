@@ -1,0 +1,88 @@
+# frozen_string_literal: true
+
+require_relative "easy_money/version"
+
+module EasyMoney
+  class Error < StandardError; end
+
+  
+  
+  def currency_exchange_rate(from, to)
+
+    currencies = Currency.last.blob
+
+    # Tests: 
+    # currency_exchange_rate("aud", "gbp") # 0.54
+    # currency_exchange_rate("GBP", "AUD") # 1.832
+    # currency_exchange_rate("USD", "AUD") # 1.29
+    # currency_exchange_rate("AUD", "usd") # 0.77
+
+    # The open exchange rate API uses UPPER case (unlike stripe and some other platforms)
+    from = from.upcase
+    to = to.upcase
+
+    error_message = """
+    The currency %{currency_code} is not a valid currency code. 
+    See `Currency.last.blob[\"rates\"].keys` to view 
+    available currencies. 
+    """
+    # from = "AUDz"
+    # error_message % {currency_code: from}
+
+    raise error_message % {currency_code: from} unless currencies["rates"].keys.include? from
+    raise error_message % {currency_code: to} unless currencies["rates"].keys.include? to
+
+
+    usd_to_from = currencies['rates'][from].to_d
+    usd_to_to = currencies['rates'][to].to_d
+    rate = usd_to_to / usd_to_from
+    # This converts 1 AUD to GPD (gives 0.54585)
+    # R example: rates$rates$GBP / rates$rates$AUD 
+    # Ruby: currency['rates']['GBP'].to_d / currency['rates']['AUD'].to_d
+
+    return rate
+
+
+  end
+
+
+
+  def convert(amount, from_currency, to_currency)
+    # Examples:
+    # convert(100, "aud", "gbp") # 54.585
+    # convert(100, "gbp", "aud") # 183.2
+    # convert(100, "usd", "aud") # 129.0
+    # convert(100, "aud", "usd") # 77.0
+    begin
+      rate = currency_exchange_rate(from_currency, to_currency)
+    rescue => exception
+       $stderr.puts "Error: #{exception} - \n\nThis may happen if you forgot to setup the database and fetch currency data. 
+       \nDid you forget to run `rails g easy_money:install`, `rake db:migrate` or `rake easy_money:fetch_rates`?
+       \nSee documentation for more information: https://github.com/stevecondylios/EasyMoney\n\n"
+    end
+      
+    converted_amount = amount * rate
+    return converted_amount 
+  end
+
+
+
+  def all_currencies
+    # Acquired via Currency.last.blob['rates'].keys
+    ["AED",   "AFN",   "ALL",   "AMD",   "ANG",   "AOA",   "ARS",   "AUD",   "AWG",   "AZN",   "BAM",   "BBD",   "BDT",   "BGN",   "BHD",   "BIF",   "BMD",   "BND",   "BOB",   "BRL",   "BSD",   "BTC",   "BTN",   "BWP",   "BYN",   "BZD",   "CAD",   "CDF",   "CHF",   "CLF",   "CLP",   "CNH",   "CNY",   "COP",   "CRC",   "CUC",   "CUP",   "CVE",   "CZK",   "DJF",   "DKK",   "DOP",   "DZD",   "EGP",   "ERN",   "ETB",   "EUR",   "FJD",   "FKP",   "GBP",   "GEL",   "GGP",   "GHS",   "GIP",   "GMD",   "GNF",   "GTQ",   "GYD",   "HKD",   "HNL",   "HRK",   "HTG",   "HUF",   "IDR",   "ILS",   "IMP",   "INR",   "IQD",   "IRR",   "ISK",   "JEP",   "JMD",   "JOD",   "JPY",   "KES",   "KGS",   "KHR",   "KMF",   "KPW",   "KRW",   "KWD",   "KYD",   "KZT",   "LAK",   "LBP",   "LKR",   "LRD",   "LSL",   "LYD",   "MAD",   "MDL",   "MGA",   "MKD",   "MMK",   "MNT",   "MOP",   "MRU",   "MUR",   "MVR",   "MWK",   "MXN",   "MYR",   "MZN",   "NAD",   "NGN",   "NIO",   "NOK",   "NPR",   "NZD",   "OMR",   "PAB",   "PEN",   "PGK",   "PHP",   "PKR",   "PLN",   "PYG",   "QAR",   "RON",   "RSD",   "RUB",   "RWF",   "SAR",   "SBD",   "SCR",   "SDG",   "SEK",   "SGD",   "SHP",   "SLL",   "SOS",   "SRD",   "SSP",   "STD",   "STN",   "SVC",   "SYP",   "SZL",   "THB",   "TJS",   "TMT",   "TND",   "TOP",   "TRY",   "TTD",   "TWD",   "TZS",   "UAH",   "UGX",   "USD",   "UYU",   "UZS",   "VES",   "VND",   "VUV",   "WST",   "XAF",   "XAG",   "XAU",   "XCD",   "XDR",   "XOF",   "XPD",   "XPF",   "XPT",   "YER",   "ZAR",   "ZMW",   "ZWL"] 
+  end
+
+
+
+
+ def some_currencies
+   ["AUD", "CAD", "EUR", "GBP", "HKD", "NZD", "SGD", "USD"]
+ end
+
+
+
+end
+
+
+
+include EasyMoney
