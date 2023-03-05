@@ -23,28 +23,47 @@ gem install easy_money
 ## Usage
 
 
+
 ### Add a currencies table to your rails app
 
 After installing the gem, run this to add a currencies table to your rails app 
 
 ```bash
-rails generate easy_money:install
+rails generate easy_money
+```
+
+followed by 
+
+```
+rake db:migrate
 ```
 
 ### Run a rake task to update currencies 
 
-Then, run this to retrieve and install currencies in the currencies table:
+
+Get a [free API key](https://openexchangerates.org/signup/free), open credentials.yml (`EDITOR="vim" rails credentials:edit`) and add the API key to credentials.yml like so:
+
+```
+easy_money:
+  openexchangerates_key: 1234AB
+```
+
+Then, run this to retrieve currencies in the currencies table:
 
 ```bash
 rake easy_money:fetch_rates
 ```
 
+Confirm it worked in the rails console with something like `Currency.last`.
 
-### Schedule it to run hourly
 
-Optional: schedule the rake task to run hourly 
+### Schedule it 
 
-Tip: open exchange rates's free API gives 1000 calls per month, and there are ~700 hours in month, so you safely run it hourly while staying within the free limit.
+**Optional**
+
+Schedule the `easy_money:fetch_rates` rake task to run at the frequency you require. 
+
+Tip: open exchange rates's free API gives 1000 calls monthly, and there are ~700 hours in month, so you safely run it hourly while staying within the free limit.
 
 
 ### Convert between currencies
@@ -53,16 +72,16 @@ Convert currencies by calling
 
 
 ```ruby
-EasyMoney.convert(amount, from_currency, to_currency)
+require 'easy_money'
+convert(amount, from_currency, to_currency)
 ```
 
 
 ### Example 
 
 ```ruby
-require 'easymoney'
-
-EasyMoney.convert(100, 'USD', 'EUR')
+require 'easy_money'
+convert(100, 'USD', 'EUR')
 # => 89.0
 ```
 

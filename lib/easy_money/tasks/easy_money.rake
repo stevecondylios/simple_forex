@@ -64,6 +64,13 @@ namespace :easy_money do
 
     Currency.create!(blob: cur)
 
+    success_message = """
+    Successfully updated %{number_of_currencies} currencies.
+    View them with `Currency.last.blob[\"rates\"].keys` or `Currency.last`.
+    """
+
+    puts success_message % {number_of_currencies: Currency.last.blob["rates"].count.to_s }
+
   end
 end
 

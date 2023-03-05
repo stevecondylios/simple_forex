@@ -28,7 +28,7 @@ module EasyMoney
 
     error_message = """
     The currency %{currency_code} is not a valid currency code. 
-    See `Currency.last.blob[\"rates\"].keys` to view 
+    Run `Currency.last.blob[\"rates\"].keys` to view 
     available currencies. 
     """
     # from = "AUDz"
@@ -61,7 +61,7 @@ module EasyMoney
     begin
       rate = currency_exchange_rate(from_currency, to_currency)
     rescue => exception
-       $stderr.puts "Error: #{exception} - \n\nThis may happen if you forgot to setup the database and fetch currency data. 
+       $stderr.puts "Error: #{exception} - \n\nYou could be seeing this error if you forgot to setup the database and fetch currency data. 
        \nDid you forget to run `rails g easy_money:install`, `rake db:migrate` or `rake easy_money:fetch_rates`?
        \nSee documentation for more information: https://github.com/stevecondylios/EasyMoney\n\n"
     end
