@@ -40,10 +40,25 @@ namespace :simple_forex do
     # from = "AUDz"
     # error_message % {currency_code: from}
 
-     
+    
+
+    def get_key
+      # Get key
+      if Rails.version[0].to_i <= 6
+        # Works in rails 6 
+        openexchangerates_key = Rails.application.credentials.simple_forex[:openexchangerates_key]
+      elsif Rails.version[0].to_i >= 7
+        # Works for rails 7
+        openexchangerates_key = Rails.application.credentials.simple_forex.openexchangerates_key
+      end
+    end
+
+  
+
+
 
     begin
-      openexchangerates_key = Rails.application.credentials.simple_forex.openexchangerates_key
+      get_key 
     rescue => exception
        $stderr.puts "Error: #{exception} - \n\n" + error_message + "\n\n"
     end
