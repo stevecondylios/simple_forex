@@ -16,7 +16,7 @@
 # Run from terminal with: RAILS_ENV=test rake fetch_rates
 
 desc "This retrieves currency data"
-namespace :easy_money do
+namespace :simple_forex do
   task :fetch_rates => :environment do
 
 
@@ -33,7 +33,7 @@ namespace :easy_money do
     It should contain lines like this:
 
     ```
-    easy_money:
+    simple_forex:
       openexchangerates_key: 1234AB
     ```
     """
@@ -43,7 +43,7 @@ namespace :easy_money do
      
 
     begin
-      openexchangerates_key = Rails.application.credentials.easy_money.openexchangerates_key
+      openexchangerates_key = Rails.application.credentials.simple_forex.openexchangerates_key
     rescue => exception
        $stderr.puts "Error: #{exception} - \n\n" + error_message + "\n\n"
     end

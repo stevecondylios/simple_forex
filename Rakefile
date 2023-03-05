@@ -15,7 +15,7 @@ task default: %i[spec rubocop]
 
 
 
-require 'easy_money'
+require 'simple_forex'
 
 path = File.expand_path(__dir__)
 Dir.glob("#{path}/tasks/**/*.rake").each { |f| import f }

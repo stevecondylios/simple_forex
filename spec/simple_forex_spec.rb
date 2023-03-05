@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-RSpec.describe EasyMoney do
+RSpec.describe SimpleForex do
   it "has a version number" do
-    expect(EasyMoney::VERSION).not_to be nil
+    expect(SimpleForex::VERSION).not_to be nil
   end
 
   it "does something useful" do

@@ -1,6 +1,6 @@
-# EasyMoney
+# SimpleForex
 
-The goal of the easy_money gem is to help you quickly:
+The goal of the simple_forex gem is to help you quickly:
 
 - Add a currencies table to your rails app
 - Schedule the retrieval of up to date foreign exchange data (hourly from a free API)
@@ -11,13 +11,13 @@ The goal of the easy_money gem is to help you quickly:
 Install the gem and add to the application's Gemfile by executing:
 
 ```bash
-bundle add easy_money
+bundle add simple_forex
 ```
 
 If bundler is not being used to manage dependencies, install the gem by executing:
 
 ```bash
-gem install easy_money
+gem install simple_forex
 ```
 
 ## Usage
@@ -29,7 +29,7 @@ gem install easy_money
 After installing the gem, run this to add a currencies table to your rails app 
 
 ```bash
-rails generate easy_money
+rails generate simple_forex
 ```
 
 followed by 
@@ -44,14 +44,14 @@ rake db:migrate
 Get a [free API key](https://openexchangerates.org/signup/free), open credentials.yml (`EDITOR="vim" rails credentials:edit`) and add the API key to credentials.yml like so:
 
 ```
-easy_money:
+simple_forex:
   openexchangerates_key: 1234AB
 ```
 
 Then, run this to retrieve currencies in the currencies table:
 
 ```bash
-rake easy_money:fetch_rates
+rake simple_forex:fetch_rates
 ```
 
 Confirm it worked in the rails console with something like `Currency.last`.
@@ -61,7 +61,7 @@ Confirm it worked in the rails console with something like `Currency.last`.
 
 **Optional**
 
-Schedule the `easy_money:fetch_rates` rake task to run at the frequency you require. 
+Schedule the `simple_forex:fetch_rates` rake task to run at the frequency you require. 
 
 Tip: open exchange rates's free API gives 1000 calls monthly, and there are ~700 hours in month, so you safely run it hourly while staying within the free limit.
 
@@ -72,7 +72,7 @@ Convert currencies by calling
 
 
 ```ruby
-require 'easy_money'
+require 'simple_forex'
 convert(amount, from_currency, to_currency)
 ```
 
@@ -80,7 +80,7 @@ convert(amount, from_currency, to_currency)
 ### Example 
 
 ```ruby
-require 'easy_money'
+require 'simple_forex'
 convert(100, 'USD', 'EUR')
 # => 89.0
 ```
@@ -95,7 +95,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/stevecondylios/easy_money.
+Bug reports and pull requests are welcome on GitHub at https://github.com/stevecondylios/simple_forex.
 
 ## License
 

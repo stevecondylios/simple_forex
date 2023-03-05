@@ -1,9 +1,9 @@
-require 'easy_money'
+require 'simple_forex'
 require 'rails'
 
-module EasyMoney
+module SimpleForex
   class Railtie < Rails::Railtie
-    railtie_name :easy_money
+    railtie_name :simple_forex
 
     rake_tasks do
       path = File.expand_path(__dir__)

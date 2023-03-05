@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in easy_money.gemspec
+# Specify your gem's dependencies in simple_forex.gemspec
 gemspec
 
 gem "rake", "~> 13.0"

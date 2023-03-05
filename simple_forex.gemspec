@@ -1,24 +1,24 @@
 # frozen_string_literal: true
 
-require_relative "lib/easy_money/version"
+require_relative "lib/simple_forex/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "easy_money"
-  spec.version = EasyMoney::VERSION
+  spec.name = "simple_forex"
+  spec.version = SimpleForex::VERSION
   spec.authors = ["Steve Condylios"]
   spec.email = ["steve.condylios@gmail.com"]
 
-  spec.summary = "easy_money lets you quickly set up currency conversion capabilities in your Rails application."
-  spec.description = "easy_money lets you setup and use currency conversion in your Rails application. It includes a migration for a currencies table that stores all world currencies, including some cryptocurrencies. It also includes a rake task for retrieving up to date foreign exchange rates, and methods to conveniently convert between currencies."
-  spec.homepage = "https://github.com/stevecondylios/easy_money"
+  spec.summary = "simple_forex lets you quickly set up currency conversion capabilities in your Rails application."
+  spec.description = "simple_forex lets you setup and use currency conversion in your Rails application. It includes a migration for a currencies table that stores all world currencies, including some cryptocurrencies. It also includes a rake task for retrieving up to date foreign exchange rates, and methods to conveniently convert between currencies."
+  spec.homepage = "https://github.com/stevecondylios/simple_forex"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
 
   # spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/stevecondylios/easy_money"
-  spec.metadata["changelog_uri"] = "https://github.com/stevecondylios/easy_money/CHANGELOG.md"
+  spec.metadata["source_code_uri"] = "https://github.com/stevecondylios/simple_forex"
+  spec.metadata["changelog_uri"] = "https://github.com/stevecondylios/simple_forex/CHANGELOG.md"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.

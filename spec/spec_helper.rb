@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "easy_money"
+require "simple_forex"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
