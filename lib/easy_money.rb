@@ -84,7 +84,7 @@ module EasyMoney
 
  # Required for rake files
 # From here: https://gist.github.com/ntamvl/7a6658b4cd82d6fbd15434f0a9953411#integrate-our-gem-with-rails-apps
-require 'railtie' if defined?(Rails)
+# require 'railtie' if defined?(Rails)
 
 
 
