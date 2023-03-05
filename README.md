@@ -44,8 +44,9 @@ rake db:migrate
 Get a [free API key](https://openexchangerates.org/signup/free), open credentials.yml (`EDITOR="vim" rails credentials:edit`) and add the API key to credentials.yml like so:
 
 ```
+# config/credentials.yml.enc
 simple_forex:
-  openexchangerates_key: 1234AB
+  openexchangerates_key: 1234abcd
 ```
 
 Then, run this to retrieve currencies in the currencies table:
@@ -54,10 +55,10 @@ Then, run this to retrieve currencies in the currencies table:
 rake simple_forex:fetch_rates
 ```
 
-Confirm it worked in the rails console with something like `Currency.last`.
+View the exchange rate data in the rails console with `Currency.last`.
 
 
-### Schedule it 
+### Schedule task to update currencies
 
 **Optional**
 
@@ -70,21 +71,20 @@ Tip: open exchange rates's free API gives 1000 calls monthly, and there are ~700
 
 Convert currencies by calling 
 
-
 ```ruby
 require 'simple_forex'
 convert(amount, from_currency, to_currency)
 ```
 
-
-### Example 
+For example 
 
 ```ruby
 require 'simple_forex'
 convert(100, 'USD', 'EUR')
-# => 89.0
+# => 0.939717e2
 ```
 
+Note the decimal value returned uses scientific notation, evidenced by the `e` in the decimal's representation.
 
 
 ## Development
