@@ -97,3 +97,8 @@ end # This is the end for the module
 
 # sc: this goes at the end so the module gets loaded when require 'easy_money' is called
 include EasyMoney
+
+
+
+
+require "easy_money/railtie" if defined?(Rails::Railtie)

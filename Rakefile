@@ -22,9 +22,6 @@ Dir.glob("#{path}/tasks/**/*.rake").each { |f| import f }
 
 
 
-
-
-
 #Sc: nice example here: https://github.com/norman/friendly_id/blob/81442a69df30a604e63fbbd789ba22464de5c758/Rakefile
 
 desc "Test task"
