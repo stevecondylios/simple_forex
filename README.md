@@ -1,20 +1,24 @@
 # EasyMoney
 
-The goal of the easy_money gem is to let users very quickly:
+The goal of the easy_money gem is to help you quickly:
 
-- Add a currencies table to their rails app
-- Set a scheduled task to update currencies hourly from a free API
+- Add a currencies table to your rails app
+- Schedule the retrieval of up to date foreign exchange data (hourly from a free API)
 - Convert between currencies
 
 ## Installation
 
 Install the gem and add to the application's Gemfile by executing:
 
-    $ bundle add easy_money
+```bash
+bundle add easy_money
+```
 
 If bundler is not being used to manage dependencies, install the gem by executing:
 
-    $ gem install easy_money
+```bash
+gem install easy_money
+```
 
 ## Usage
 

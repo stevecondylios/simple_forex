@@ -5,6 +5,11 @@ require_relative "easy_money/version"
 module EasyMoney
   class Error < StandardError; end
 
+  # From: https://stackoverflow.com/a/31701809/5783745
+  # Otherwise after the migration you get Currency.count # uninitialized constant Currency (NameError)
+  class Currency < ActiveRecord::Base
+  end
+
   
   
   def currency_exchange_rate(from, to)
