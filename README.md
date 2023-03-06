@@ -1,47 +1,41 @@
 # SimpleForex
 
-The goal of the simple_forex gem is to help you quickly:
+You already know how to convert one currency into another and all you need to do is get the data. And that part will be easy, right..?
 
-- Add a currencies table to your rails app
-- Schedule the retrieval of up to date foreign exchange data (hourly from a free API)
-- Convert between currencies
+This gem lets you fetch foreign exchange rates for ~170 currencies (a total of ~14,000 imputed currency pairs) for free, on an hourly frequently (sufficient for most, but not all, use cases), and takes only about 5 minutes to set up. 
+
+The usage instructions below show you how to creat a currencies table, runn a rake task to update the data, and use `convert()` to convert between currencies.
+
 
 ## Installation
 
-Install the gem and add to the application's Gemfile by executing:
+Install the gem in one of the usual ways:
 
 ```bash
 bundle add simple_forex
-```
 
-If bundler is not being used to manage dependencies, install the gem by executing:
-
-```bash
 gem install simple_forex
 ```
 
 ## Usage
 
+### Create a currencies table 
 
-
-### Add a currencies table to your rails app
-
-After installing the gem, run this to add a currencies table to your rails app 
+The simple_forex generator will make a currencies table migration: 
 
 ```bash
 rails generate simple_forex
 ```
 
-followed by 
+Then run the migration: 
 
 ```
 rake db:migrate
 ```
 
-### Run a rake task to update currencies 
+### Fetch exchange rates 
 
-
-Get a [free API key](https://openexchangerates.org/signup/free), open credentials.yml (`EDITOR="vim" rails credentials:edit`) and add the API key to credentials.yml like so:
+Create a [free API key](https://openexchangerates.org/signup/free), open credentials.yml (`EDITOR="vim" rails credentials:edit`) and add the API key to credentials.yml like so:
 
 ```
 # config/credentials.yml.enc
@@ -49,16 +43,46 @@ simple_forex:
   openexchangerates_key: 1234abcd
 ```
 
-Then, run this to retrieve currencies in the currencies table:
+Then, run this rate task to retrieve currencies in store them in the currencies table:
 
 ```bash
 rake simple_forex:fetch_rates
 ```
 
-View the exchange rate data in the rails console with `Currency.last`.
+View the exchange rate data in the rails console with `Currency.last`:
 
+```
+=> #<SimpleForex::Currency:0x000000013c4bae78
+ id: 1,
+ blob:
+  {"base"=>"USD",
+   "rates"=>
+    {"AED"=>"3.67286",
+     "AFN"=>"89.49999",
+     "ALL"=>"108.164235",
+     "AMD"=>"388.147964",
+     "ANG"=>"1.798456",
+     "AOA"=>"503.891",
+     "ARS"=>"198.1831",
+     "AUD"=>"1.485125",
 
-### Schedule task to update currencies
+     ...
+     
+     "XOF"=>"617.115134",
+     "XPD"=>"0.00069861",
+     "XPF"=>"112.265627",
+     "XPT"=>"0.00103175",
+     "YER"=>"250.300106",
+     "ZAR"=>"18.23512",
+     "ZMW"=>"19.934751",
+     "ZWL"=>"322.0"},
+   "license"=>"https://openexchangerates.org/license",
+   "timestamp"=>1678096800,
+   "disclaimer"=>"Usage subject to terms: https://openexchangerates.org/terms"},
+ created_at: Mon, 06 Mar 2023 10:43:54 UTC +00:00,
+ updated_at: Mon, 06 Mar 2023 10:43:54 UTC +00:00>
+```
+
 
 **Optional**
 
@@ -76,7 +100,7 @@ require 'simple_forex'
 convert(amount, from_currency, to_currency)
 ```
 
-For example 
+Example 
 
 ```ruby
 require 'simple_forex'
@@ -84,18 +108,16 @@ convert(100, 'USD', 'EUR')
 # => 0.939717e2
 ```
 
-Note the decimal value returned uses scientific notation, evidenced by the `e` in the decimal's representation.
+Note ruby decimals use scientific notation, evidenced by the `e`, (it can be easy to miss or forget that).
 
 
-## Development
+## Requirements
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+This gem *probably* only works on Rails 6 and Rails 7 apps, and only those using a postgres database.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/stevecondylios/simple_forex.
+Bug reports and pull requests are very welcome at https://github.com/stevecondylios/simple_forex.
 
 ## License
 
