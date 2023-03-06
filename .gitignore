@@ -9,4 +9,9 @@
 
 # rspec failure tracking
 .rspec_status
+**/.DS_Store
+
+
+
+# sc: This ensures the compiled gem stays out of source control
 simple_forex-*
