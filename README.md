@@ -1,6 +1,8 @@
 # SimpleForex
 
-You already know how to convert between currencies and all you need to do is get the data. And that part's easy, right..?
+You already know how to convert between currencies and all you need to do is get the exchange rate data.
+
+And that part's easy, right..?
 
 This gem lets you fetch exchange rates for ~170 currencies (a total of ~14,000 imputed currency pairs) for free, on an hourly frequently (sufficient for most, but not all, use cases), and takes only about 5 minutes to set up. 
 
