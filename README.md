@@ -46,7 +46,7 @@ simple_forex:
   openexchangerates_key: 1234abcd
 ```
 
-Then, run this rate task to retrieve currencies and store them in the currencies table:
+Run this rate task to retrieve currencies and store them in the currencies table:
 
 ```bash
 rake simple_forex:fetch_rates
