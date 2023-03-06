@@ -1,10 +1,10 @@
 # SimpleForex
 
-You already know how to convert one currency into another and all you need to do is get the data. And that part will be easy, right..?
+You already know how to convert between currencies and all you need to do is get the data. And that part's easy, right..?
 
-This gem lets you fetch foreign exchange rates for ~170 currencies (a total of ~14,000 imputed currency pairs) for free, on an hourly frequently (sufficient for most, but not all, use cases), and takes only about 5 minutes to set up. 
+This gem lets you fetch exchange rates for ~170 currencies (a total of ~14,000 imputed currency pairs) for free, on an hourly frequently (sufficient for most, but not all, use cases), and takes only about 5 minutes to set up. 
 
-The usage instructions below show you how to creat a currencies table, runn a rake task to update the data, and use `convert()` to convert between currencies.
+The usage instructions below show how to create a currencies table, run a rake task to update the exchange rates, and use `convert()` to convert between currencies inside your application.
 
 
 ## Installation
@@ -21,7 +21,7 @@ gem install simple_forex
 
 ### Create a currencies table 
 
-The simple_forex generator will make a currencies table migration: 
+Use the included generator will make a currencies table migration: 
 
 ```bash
 rails generate simple_forex
@@ -43,7 +43,7 @@ simple_forex:
   openexchangerates_key: 1234abcd
 ```
 
-Then, run this rate task to retrieve currencies in store them in the currencies table:
+Then, run this rate task to retrieve currencies and store them in the currencies table:
 
 ```bash
 rake simple_forex:fetch_rates
@@ -108,7 +108,7 @@ convert(100, 'USD', 'EUR')
 # => 0.939717e2
 ```
 
-Note ruby decimals use scientific notation, evidenced by the `e`, (it can be easy to miss or forget that).
+Note ruby decimals use scientific notation, evidenced by the `e` toward the end of the value.
 
 
 ## Requirements
