@@ -1,4 +1,10 @@
 
+
+## [0.1.3] - 2023-03-06
+
+- Bug fix
+
+
 ## [0.1.2] - 2023-03-06
 
 - Fix for bug in retrieving open exchange rates key
