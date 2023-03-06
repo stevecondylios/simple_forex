@@ -41,6 +41,7 @@ Create a [free API key](https://openexchangerates.org/signup/free), open credent
 
 ```
 # config/credentials.yml.enc
+
 simple_forex:
   openexchangerates_key: 1234abcd
 ```
