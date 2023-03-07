@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require "active_record/railtie" # Sc: I added this because without it rspec complains about ActiveRecord::Base
 require_relative "simple_forex/version"
 
 module SimpleForex
