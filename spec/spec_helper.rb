@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-require "active_record/railtie"
+# require "active_record/railtie"
 require "simple_forex"
 
 RSpec.configure do |config|
