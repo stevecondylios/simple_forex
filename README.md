@@ -1,12 +1,8 @@
 # SimpleForex
 
-You already know how to convert between currencies and all you need to do is get the exchange rate data.
+This ruby gem lets you fetch exchange rates for ~170 currencies (a total of ~14,000 imputed currency pairs) for free, on an hourly frequently (sufficient for most, but not all, use cases), and takes only about 5 minutes to set up. 
 
-And that part's easy, right..?
-
-This gem lets you fetch exchange rates for ~170 currencies (a total of ~14,000 imputed currency pairs) for free, on an hourly frequently (sufficient for most, but not all, use cases), and takes only about 5 minutes to set up. 
-
-The usage instructions below show how to create a currencies table, run a rake task to update the exchange rates, and use `convert()` to convert between currencies inside your application.
+The usage instructions below show how to create a currencies table, run a rake task to update the exchange rates, and use `convert()` to convert between currencies inside your application. Total time to implementation should be ~5 minutes. 
 
 
 ## Installation
