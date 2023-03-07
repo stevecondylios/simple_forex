@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>module SimpleForex - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+<body id="top" role="document" class="module">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+    
+    
+    
+<!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    <li ><a href="#method-i-all_currencies">#all_currencies</a>
+    <li ><a href="#method-i-convert">#convert</a>
+    <li ><a href="#method-i-currency_exchange_rate">#currency_exchange_rate</a>
+    <li ><a href="#method-i-some_currencies">#some_currencies</a>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="module-SimpleForex">
+  <h1 id="module-SimpleForex" class="module">
+    module SimpleForex
+  </h1>
+
+  <section class="description">
+    
+<p>Tip: open exchange rates&#39;s free API gives 1000 calls monthly, and there are ~700 hours in month, so you safely run it hourly while staying within the free limit.</p>
+
+  </section>
+
+  <section id="5Buntitled-5D" class="documentation-section">
+
+
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+        <dt id="VERSION">VERSION
+        <dd>
+      </dl>
+    </section>
+
+
+
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+      <div id="method-i-all_currencies" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">all_currencies</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="all_currencies-source">
+            <pre><span class="ruby-comment"># File simple_forex.rb, line 165</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">all_currencies</span>
+  <span class="ruby-comment"># Acquired via Currency.last.blob[&#39;rates&#39;].keys</span>
+  [<span class="ruby-string">&quot;AED&quot;</span>,   <span class="ruby-string">&quot;AFN&quot;</span>,   <span class="ruby-string">&quot;ALL&quot;</span>,   <span class="ruby-string">&quot;AMD&quot;</span>,   <span class="ruby-string">&quot;ANG&quot;</span>,   <span class="ruby-string">&quot;AOA&quot;</span>,   <span class="ruby-string">&quot;ARS&quot;</span>,   <span class="ruby-string">&quot;AUD&quot;</span>,   <span class="ruby-string">&quot;AWG&quot;</span>,   <span class="ruby-string">&quot;AZN&quot;</span>,   <span class="ruby-string">&quot;BAM&quot;</span>,   <span class="ruby-string">&quot;BBD&quot;</span>,   <span class="ruby-string">&quot;BDT&quot;</span>,   <span class="ruby-string">&quot;BGN&quot;</span>,   <span class="ruby-string">&quot;BHD&quot;</span>,   <span class="ruby-string">&quot;BIF&quot;</span>,   <span class="ruby-string">&quot;BMD&quot;</span>,   <span class="ruby-string">&quot;BND&quot;</span>,   <span class="ruby-string">&quot;BOB&quot;</span>,   <span class="ruby-string">&quot;BRL&quot;</span>,   <span class="ruby-string">&quot;BSD&quot;</span>,   <span class="ruby-string">&quot;BTC&quot;</span>,   <span class="ruby-string">&quot;BTN&quot;</span>,   <span class="ruby-string">&quot;BWP&quot;</span>,   <span class="ruby-string">&quot;BYN&quot;</span>,   <span class="ruby-string">&quot;BZD&quot;</span>,   <span class="ruby-string">&quot;CAD&quot;</span>,   <span class="ruby-string">&quot;CDF&quot;</span>,   <span class="ruby-string">&quot;CHF&quot;</span>,   <span class="ruby-string">&quot;CLF&quot;</span>,   <span class="ruby-string">&quot;CLP&quot;</span>,   <span class="ruby-string">&quot;CNH&quot;</span>,   <span class="ruby-string">&quot;CNY&quot;</span>,   <span class="ruby-string">&quot;COP&quot;</span>,   <span class="ruby-string">&quot;CRC&quot;</span>,   <span class="ruby-string">&quot;CUC&quot;</span>,   <span class="ruby-string">&quot;CUP&quot;</span>,   <span class="ruby-string">&quot;CVE&quot;</span>,   <span class="ruby-string">&quot;CZK&quot;</span>,   <span class="ruby-string">&quot;DJF&quot;</span>,   <span class="ruby-string">&quot;DKK&quot;</span>,   <span class="ruby-string">&quot;DOP&quot;</span>,   <span class="ruby-string">&quot;DZD&quot;</span>,   <span class="ruby-string">&quot;EGP&quot;</span>,   <span class="ruby-string">&quot;ERN&quot;</span>,   <span class="ruby-string">&quot;ETB&quot;</span>,   <span class="ruby-string">&quot;EUR&quot;</span>,   <span class="ruby-string">&quot;FJD&quot;</span>,   <span class="ruby-string">&quot;FKP&quot;</span>,   <span class="ruby-string">&quot;GBP&quot;</span>,   <span class="ruby-string">&quot;GEL&quot;</span>,   <span class="ruby-string">&quot;GGP&quot;</span>,   <span class="ruby-string">&quot;GHS&quot;</span>,   <span class="ruby-string">&quot;GIP&quot;</span>,   <span class="ruby-string">&quot;GMD&quot;</span>,   <span class="ruby-string">&quot;GNF&quot;</span>,   <span class="ruby-string">&quot;GTQ&quot;</span>,   <span class="ruby-string">&quot;GYD&quot;</span>,   <span class="ruby-string">&quot;HKD&quot;</span>,   <span class="ruby-string">&quot;HNL&quot;</span>,   <span class="ruby-string">&quot;HRK&quot;</span>,   <span class="ruby-string">&quot;HTG&quot;</span>,   <span class="ruby-string">&quot;HUF&quot;</span>,   <span class="ruby-string">&quot;IDR&quot;</span>,   <span class="ruby-string">&quot;ILS&quot;</span>,   <span class="ruby-string">&quot;IMP&quot;</span>,   <span class="ruby-string">&quot;INR&quot;</span>,   <span class="ruby-string">&quot;IQD&quot;</span>,   <span class="ruby-string">&quot;IRR&quot;</span>,   <span class="ruby-string">&quot;ISK&quot;</span>,   <span class="ruby-string">&quot;JEP&quot;</span>,   <span class="ruby-string">&quot;JMD&quot;</span>,   <span class="ruby-string">&quot;JOD&quot;</span>,   <span class="ruby-string">&quot;JPY&quot;</span>,   <span class="ruby-string">&quot;KES&quot;</span>,   <span class="ruby-string">&quot;KGS&quot;</span>,   <span class="ruby-string">&quot;KHR&quot;</span>,   <span class="ruby-string">&quot;KMF&quot;</span>,   <span class="ruby-string">&quot;KPW&quot;</span>,   <span class="ruby-string">&quot;KRW&quot;</span>,   <span class="ruby-string">&quot;KWD&quot;</span>,   <span class="ruby-string">&quot;KYD&quot;</span>,   <span class="ruby-string">&quot;KZT&quot;</span>,   <span class="ruby-string">&quot;LAK&quot;</span>,   <span class="ruby-string">&quot;LBP&quot;</span>,   <span class="ruby-string">&quot;LKR&quot;</span>,   <span class="ruby-string">&quot;LRD&quot;</span>,   <span class="ruby-string">&quot;LSL&quot;</span>,   <span class="ruby-string">&quot;LYD&quot;</span>,   <span class="ruby-string">&quot;MAD&quot;</span>,   <span class="ruby-string">&quot;MDL&quot;</span>,   <span class="ruby-string">&quot;MGA&quot;</span>,   <span class="ruby-string">&quot;MKD&quot;</span>,   <span class="ruby-string">&quot;MMK&quot;</span>,   <span class="ruby-string">&quot;MNT&quot;</span>,   <span class="ruby-string">&quot;MOP&quot;</span>,   <span class="ruby-string">&quot;MRU&quot;</span>,   <span class="ruby-string">&quot;MUR&quot;</span>,   <span class="ruby-string">&quot;MVR&quot;</span>,   <span class="ruby-string">&quot;MWK&quot;</span>,   <span class="ruby-string">&quot;MXN&quot;</span>,   <span class="ruby-string">&quot;MYR&quot;</span>,   <span class="ruby-string">&quot;MZN&quot;</span>,   <span class="ruby-string">&quot;NAD&quot;</span>,   <span class="ruby-string">&quot;NGN&quot;</span>,   <span class="ruby-string">&quot;NIO&quot;</span>,   <span class="ruby-string">&quot;NOK&quot;</span>,   <span class="ruby-string">&quot;NPR&quot;</span>,   <span class="ruby-string">&quot;NZD&quot;</span>,   <span class="ruby-string">&quot;OMR&quot;</span>,   <span class="ruby-string">&quot;PAB&quot;</span>,   <span class="ruby-string">&quot;PEN&quot;</span>,   <span class="ruby-string">&quot;PGK&quot;</span>,   <span class="ruby-string">&quot;PHP&quot;</span>,   <span class="ruby-string">&quot;PKR&quot;</span>,   <span class="ruby-string">&quot;PLN&quot;</span>,   <span class="ruby-string">&quot;PYG&quot;</span>,   <span class="ruby-string">&quot;QAR&quot;</span>,   <span class="ruby-string">&quot;RON&quot;</span>,   <span class="ruby-string">&quot;RSD&quot;</span>,   <span class="ruby-string">&quot;RUB&quot;</span>,   <span class="ruby-string">&quot;RWF&quot;</span>,   <span class="ruby-string">&quot;SAR&quot;</span>,   <span class="ruby-string">&quot;SBD&quot;</span>,   <span class="ruby-string">&quot;SCR&quot;</span>,   <span class="ruby-string">&quot;SDG&quot;</span>,   <span class="ruby-string">&quot;SEK&quot;</span>,   <span class="ruby-string">&quot;SGD&quot;</span>,   <span class="ruby-string">&quot;SHP&quot;</span>,   <span class="ruby-string">&quot;SLL&quot;</span>,   <span class="ruby-string">&quot;SOS&quot;</span>,   <span class="ruby-string">&quot;SRD&quot;</span>,   <span class="ruby-string">&quot;SSP&quot;</span>,   <span class="ruby-string">&quot;STD&quot;</span>,   <span class="ruby-string">&quot;STN&quot;</span>,   <span class="ruby-string">&quot;SVC&quot;</span>,   <span class="ruby-string">&quot;SYP&quot;</span>,   <span class="ruby-string">&quot;SZL&quot;</span>,   <span class="ruby-string">&quot;THB&quot;</span>,   <span class="ruby-string">&quot;TJS&quot;</span>,   <span class="ruby-string">&quot;TMT&quot;</span>,   <span class="ruby-string">&quot;TND&quot;</span>,   <span class="ruby-string">&quot;TOP&quot;</span>,   <span class="ruby-string">&quot;TRY&quot;</span>,   <span class="ruby-string">&quot;TTD&quot;</span>,   <span class="ruby-string">&quot;TWD&quot;</span>,   <span class="ruby-string">&quot;TZS&quot;</span>,   <span class="ruby-string">&quot;UAH&quot;</span>,   <span class="ruby-string">&quot;UGX&quot;</span>,   <span class="ruby-string">&quot;USD&quot;</span>,   <span class="ruby-string">&quot;UYU&quot;</span>,   <span class="ruby-string">&quot;UZS&quot;</span>,   <span class="ruby-string">&quot;VES&quot;</span>,   <span class="ruby-string">&quot;VND&quot;</span>,   <span class="ruby-string">&quot;VUV&quot;</span>,   <span class="ruby-string">&quot;WST&quot;</span>,   <span class="ruby-string">&quot;XAF&quot;</span>,   <span class="ruby-string">&quot;XAG&quot;</span>,   <span class="ruby-string">&quot;XAU&quot;</span>,   <span class="ruby-string">&quot;XCD&quot;</span>,   <span class="ruby-string">&quot;XDR&quot;</span>,   <span class="ruby-string">&quot;XOF&quot;</span>,   <span class="ruby-string">&quot;XPD&quot;</span>,   <span class="ruby-string">&quot;XPF&quot;</span>,   <span class="ruby-string">&quot;XPT&quot;</span>,   <span class="ruby-string">&quot;YER&quot;</span>,   <span class="ruby-string">&quot;ZAR&quot;</span>,   <span class="ruby-string">&quot;ZMW&quot;</span>,   <span class="ruby-string">&quot;ZWL&quot;</span>] 
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-convert" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">convert</span><span
+            class="method-args">(amount, from_currency, to_currency)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="convert-source">
+            <pre><span class="ruby-comment"># File simple_forex.rb, line 145</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">convert</span>(<span class="ruby-identifier">amount</span>, <span class="ruby-identifier">from_currency</span>, <span class="ruby-identifier">to_currency</span>)
+  <span class="ruby-comment"># Examples:</span>
+  <span class="ruby-comment"># convert(100, &quot;aud&quot;, &quot;gbp&quot;) # 54.585</span>
+  <span class="ruby-comment"># convert(100, &quot;gbp&quot;, &quot;aud&quot;) # 183.2</span>
+  <span class="ruby-comment"># convert(100, &quot;usd&quot;, &quot;aud&quot;) # 129.0</span>
+  <span class="ruby-comment"># convert(100, &quot;aud&quot;, &quot;usd&quot;) # 77.0</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">rate</span> = <span class="ruby-identifier">currency_exchange_rate</span>(<span class="ruby-identifier">from_currency</span>, <span class="ruby-identifier">to_currency</span>)
+  <span class="ruby-keyword">rescue</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">exception</span>
+     <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Error: #{exception} - \n\nYou could be seeing this error if you forgot to setup the database and fetch currency data. 
+     \nDid you forget to run `rails g simple_forex:install`, `rake db:migrate` or `rake simple_forex:fetch_rates`?
+     \nSee documentation for more information: https://github.com/stevecondylios/SimpleForex\n\n&quot;</span>
+  <span class="ruby-keyword">end</span>
+    
+  <span class="ruby-identifier">converted_amount</span> = <span class="ruby-identifier">amount</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">rate</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">converted_amount</span> 
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-currency_exchange_rate" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">currency_exchange_rate</span><span
+            class="method-args">(from, to)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="currency_exchange_rate-source">
+            <pre><span class="ruby-comment"># File simple_forex.rb, line 105</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">currency_exchange_rate</span>(<span class="ruby-identifier">from</span>, <span class="ruby-identifier">to</span>)
+
+  <span class="ruby-identifier">currencies</span> = <span class="ruby-constant">Currency</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">blob</span>
+
+  <span class="ruby-comment"># Tests:</span>
+  <span class="ruby-comment"># currency_exchange_rate(&quot;aud&quot;, &quot;gbp&quot;) # 0.54</span>
+  <span class="ruby-comment"># currency_exchange_rate(&quot;GBP&quot;, &quot;AUD&quot;) # 1.832</span>
+  <span class="ruby-comment"># currency_exchange_rate(&quot;USD&quot;, &quot;AUD&quot;) # 1.29</span>
+  <span class="ruby-comment"># currency_exchange_rate(&quot;AUD&quot;, &quot;usd&quot;) # 0.77</span>
+
+  <span class="ruby-comment"># The open exchange rate API uses UPPER case (unlike stripe and some other platforms)</span>
+  <span class="ruby-identifier">from</span> = <span class="ruby-identifier">from</span>.<span class="ruby-identifier">upcase</span>
+  <span class="ruby-identifier">to</span> = <span class="ruby-identifier">to</span>.<span class="ruby-identifier">upcase</span>
+
+  <span class="ruby-identifier">error_message</span> = <span class="ruby-string">&quot;&quot;</span><span class="ruby-string">&quot;
+  The currency %{currency_code} is not a valid currency code. 
+  Run `Currency.last.blob[\&quot;rates\&quot;].keys` to view 
+  available currencies. 
+  &quot;</span><span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-comment"># from = &quot;AUDz&quot;</span>
+  <span class="ruby-comment"># error_message % {currency_code: from}</span>
+
+  <span class="ruby-identifier">raise</span> <span class="ruby-identifier">error_message</span> <span class="ruby-operator">%</span> {<span class="ruby-value">currency_code:</span> <span class="ruby-identifier">from</span>} <span class="ruby-keyword">unless</span> <span class="ruby-identifier">currencies</span>[<span class="ruby-string">&quot;rates&quot;</span>].<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">from</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-identifier">error_message</span> <span class="ruby-operator">%</span> {<span class="ruby-value">currency_code:</span> <span class="ruby-identifier">to</span>} <span class="ruby-keyword">unless</span> <span class="ruby-identifier">currencies</span>[<span class="ruby-string">&quot;rates&quot;</span>].<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">to</span>
+
+
+  <span class="ruby-identifier">usd_to_from</span> = <span class="ruby-identifier">currencies</span>[<span class="ruby-string">&#39;rates&#39;</span>][<span class="ruby-identifier">from</span>].<span class="ruby-identifier">to_d</span>
+  <span class="ruby-identifier">usd_to_to</span> = <span class="ruby-identifier">currencies</span>[<span class="ruby-string">&#39;rates&#39;</span>][<span class="ruby-identifier">to</span>].<span class="ruby-identifier">to_d</span>
+  <span class="ruby-identifier">rate</span> = <span class="ruby-identifier">usd_to_to</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">usd_to_from</span>
+  <span class="ruby-comment"># This converts 1 AUD to GPD (gives 0.54585)</span>
+  <span class="ruby-comment"># R example: rates$rates$GBP / rates$rates$AUD</span>
+  <span class="ruby-comment"># Ruby: currency[&#39;rates&#39;][&#39;GBP&#39;].to_d / currency[&#39;rates&#39;][&#39;AUD&#39;].to_d</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">rate</span>
+
+
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-some_currencies" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">some_currencies</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="some_currencies-source">
+            <pre><span class="ruby-comment"># File simple_forex.rb, line 173</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">some_currencies</span>
+  [<span class="ruby-string">&quot;AUD&quot;</span>, <span class="ruby-string">&quot;CAD&quot;</span>, <span class="ruby-string">&quot;EUR&quot;</span>, <span class="ruby-string">&quot;GBP&quot;</span>, <span class="ruby-string">&quot;HKD&quot;</span>, <span class="ruby-string">&quot;NZD&quot;</span>, <span class="ruby-string">&quot;SGD&quot;</span>, <span class="ruby-string">&quot;USD&quot;</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.3.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
