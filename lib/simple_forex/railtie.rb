@@ -1,5 +1,4 @@
 require 'simple_forex'
-require 'rails'
 
 module SimpleForex
   class Railtie < Rails::Railtie
