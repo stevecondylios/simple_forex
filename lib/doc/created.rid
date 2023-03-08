@@ -1,8 +1,0 @@
-Wed, 08 Mar 2023 02:32:29 +1100
-generators/simple_forex/simple_forex_generator.rb	Sun, 05 Mar 2023 15:40:13 +1100
-simple_forex/initializer.rb	Sun, 05 Mar 2023 05:24:40 +1100
-simple_forex/migration.rb	Sun, 05 Mar 2023 04:40:55 +1100
-simple_forex/railtie.rb	Tue, 07 Mar 2023 20:44:05 +1100
-simple_forex/tasks/simple_forex.rake	Mon, 06 Mar 2023 04:35:56 +1100
-simple_forex/version.rb	Wed, 08 Mar 2023 02:31:10 +1100
-simple_forex.rb	Wed, 08 Mar 2023 02:24:07 +1100
